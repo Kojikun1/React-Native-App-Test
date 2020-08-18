@@ -1,4 +1,4 @@
-### Aplicativo feito Para vaga de de desenvolvedor React-Native
+### Aplicativo feito Para vaga de desenvolvedor React-Native
 
 ### Front-end/Mobile Software Test
 
