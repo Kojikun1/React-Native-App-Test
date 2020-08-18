@@ -2,27 +2,36 @@
 
 ### Front-end/Mobile Software Test
 
-<img src="app-images/app-image-01.png" width="200"/>
-<img src="app-images/app-image-02.png" width="200"/>
+<img src="assets/app-image-01.png" width="200"/>
+<img src="assets/app-image-02.png" width="200"/>
 
 ---
+### Aplicativo Possue Autenticação com API JWT
 
-### Aplicativo Possue Autenticação JWT
+#### Login Complemente funcional
 
 ### Tecnologias Utilizadass
 
 - React Native
-  - Context-Api
-  - Animated
-  - React Native components
+- Context-api
+- Axios
+- Animated
 - React Hooks
+- Typescript
 - React Navigation V5
 - Styled-Components
 - React-native-vector-icons
 - Formik
 - Yup
 ---
-#### How to run
+### How to run
+
+#### First Need Enviroment Setup
+
+#### Follow this guide (open React Native CLI Quickstart)
+[React-native Enviroment Setup](https://reactnative.dev/docs/environment-setup 'site')
+
+After the Setup
 
 #### Open the project root directory and run command
 
@@ -34,9 +43,7 @@ or
 ```
 yarn install
 ```
-
-For android ( Need Enviroment Setup follow this guide 
-[React-native Enviroment Setup](https://reactnative.dev/docs/environment-setup 'site'))
+Run on device or emulator
 
 ```
 npx react-native run-android
