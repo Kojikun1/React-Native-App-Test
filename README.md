@@ -2,8 +2,9 @@
 
 ### Front-end/Mobile Software Test
 
-<img src="assets/app-image-01.png" width="200"/>
-<img src="assets/app-image-02.png" width="200"/>
+Image 1             |  Image 2
+:-------------------------:|:-------------------------:
+<img src="assets/app-image-01.png" width="200"/>  |  <img src="assets/app-image-02.png" width="200"/>
 
 ---
 ### Aplicativo Possue Autenticação com API JWT
