@@ -1,26 +1,21 @@
-import React, { useState } from 'react';
-import {Text, Button, Image } from 'react-native';
+import React from 'react';
 
-import { Container } from './styles';
+import { Container, Title, LoggedUser, UserData } from './styles';
 
 import DrawerButton from '../../components/DrawerButton';
 import { useAuth } from '../../contexts/authContext';
 
 export default function Home(){
-     const { user, signOut } = useAuth();
-
-     function handleSignOut(){
-         signOut();
-     }
+     const { user } = useAuth();
 
      console.log(user);
     return (
         <Container>
             <DrawerButton  />
-            <Text>Home</Text>
-            <Text>{user?.name}</Text>
-            <Text>{user?.email}</Text>
-            <Button title="SignOut" onPress={handleSignOut}  />
+            <Title>Home</Title>
+            <LoggedUser>Usuario: {user?.name}</LoggedUser>
+            <UserData>Id: {user?._id}</UserData>
+            <UserData>Email: {user?.email}</UserData>
         </Container>
     )
 }

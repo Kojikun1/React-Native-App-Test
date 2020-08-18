@@ -4,6 +4,7 @@ import api from '../services/api';
 import { Alert } from 'react-native';
 
 interface User {
+    _id: string;
     name: string;
     email: string;
 }
@@ -56,6 +57,7 @@ export const AuthProvider: React.FC = ({ children }) => {
             setIsLoading(false);
        } catch (error) {
            if(error.response){
+               Alert.alert('Falha no Login',error.response.data.message);
                console.log(error.response.data);
            }
            setIsLoading(false);
@@ -63,6 +65,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 
     }
     async function register(name: string,email: string,password: string){
+          setIsLoading(true);
            try {
                const response = await api.post("/user/register", {
                    name,
@@ -71,11 +74,12 @@ export const AuthProvider: React.FC = ({ children }) => {
                });
 
                console.log(response.data);
-               
+                setIsLoading(false);
                Alert.alert('Registrado com Sucesso',"Pode Agora Fazer Login na sua conta");
            } catch (error) {
+                setIsLoading(false);
                 if(error.response){
-                    Alert.alert("Failure to Resgister", error.response.data.message);
+                    Alert.alert("Falha ao registrar tente novamente", error.response.data.message);
                 }
                 console.log(error);
            }
