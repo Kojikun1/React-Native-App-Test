@@ -64,15 +64,20 @@ export const AuthProvider: React.FC = ({ children }) => {
     }
     async function register(name: string,email: string,password: string){
            try {
-               const response = await api.post("/user/resgister", {
+               const response = await api.post("/user/register", {
                    name,
                    email,
                    password
                });
+
+               console.log(response.data);
                
-               Alert.alert('Successful Registered');
+               Alert.alert('Registrado com Sucesso',"Pode Agora Fazer Login na sua conta");
            } catch (error) {
-               
+                if(error.response){
+                    Alert.alert("Failure to Resgister", error.response.data.message);
+                }
+                console.log(error);
            }
     }
     async function signOut(){

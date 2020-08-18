@@ -11,5 +11,5 @@ export const ButtonContainer = styled.TouchableOpacity`
 export const ButtonIcon = styled(Icon)`
     width: 40px;
     height: 40px;
-    color: green;
+    color: #fff;
 `
