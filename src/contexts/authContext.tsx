@@ -29,7 +29,7 @@ export const AuthProvider: React.FC = ({ children }) => {
        async function loadStoragedData(){
              setIsLoading(true);
              const storageUser = await AsyncStorage.getItem('@Auth:user');
-             const storageToken = await AsyncStorage.getItem('@Auth:user');
+             const storageToken = await AsyncStorage.getItem('@Auth:token');
 
              if(storageUser && storageToken){
                  setUser(JSON.parse(storageUser));
@@ -56,11 +56,11 @@ export const AuthProvider: React.FC = ({ children }) => {
             api.defaults.headers.authorization = `Bearer ${response.data.token}`;
             setIsLoading(false);
        } catch (error) {
+        setIsLoading(false);
            if(error.response){
                Alert.alert('Falha no Login',error.response.data.message);
                console.log(error.response.data);
-           }
-           setIsLoading(false);
+           }   
        }
 
     }
