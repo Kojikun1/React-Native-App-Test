@@ -58,6 +58,7 @@ export default function Login(){
                         onChangeText={handleChange('password')}
                         value={values.password}
                         placeholder="password"
+                        secureTextEntry={true}
                 />
                 <ErrorText>{touched.password && errors.password}</ErrorText>
                 <ButtonContainer onPress={handleSubmit} >
